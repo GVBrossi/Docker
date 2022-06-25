@@ -1,0 +1,10 @@
+FROM python:3.8-slim
+
+RUN pip install pandas
+
+COPY ./Job/job.py /job.py
+COPY ./Job/entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+CMD /entrypoint.sh
